@@ -35,8 +35,13 @@
             url: "https://parexton.com",
             year: "2017 - 2018",
             color: "#000",
-            description:
-              "Blokay is a leading pro website builder loved by designers.",
+            description: "Software factory for LATAM clients",
+            items: [
+              "Fullstack dev (PHP, JS)",
+              "Promoted to architect",
+              "Led first client project",
+              "Delivered custom platforms",
+            ],
           },
 
           {
@@ -44,8 +49,13 @@
             logo: "./logos/bozz.png",
             color: "#000",
             year: "2018 - 2019",
-            description:
-              "Blokay is a leading pro website builder loved by designers.",
+            description: "Agile software dev shop",
+            items: [
+              "Co-founded and led tech",
+              "Created internal dev tools",
+              "Focused on JS ecosystem",
+              "Delivered B2B projects",
+            ],
           },
 
           {
@@ -54,15 +64,25 @@
             url: "https://refacil.co",
             color: "#000",
             year: "2019 - 2022",
-            description:
-              "Blokay is a leading pro website builder loved by designers.",
+            description: "Fintech for micro-retailers in Colombia",
+            items: [
+              "Co-founded and led tech",
+              "Scaled to 10M+ tx/month",
+              "Built full payments stack",
+              "Hired and managed dev team",
+            ],
           },
           {
             name: "Pronty",
             color: "#000",
             year: "2023 - 2024",
-            description:
-              "Blokay is a leading pro website builder loved by designers.",
+            description: "Platform to digitize and monetize small retailers",
+            items: [
+              "CEO and co-founder",
+              "Raised $100K from Platanus",
+              "Reached $2M in GMV, 1,000 merchants",
+              "Sold and merged into Bemovil",
+            ],
           },
           {
             name: "Bemovil",
@@ -70,8 +90,13 @@
             url: "https://bemovil.net",
             color: "#000",
             year: "2024 - Present",
-            description:
-              "Blokay is a leading pro website builder loved by designers.",
+            description: "Digital services for small retailers in LATAM",
+            items: [
+              "Led strategy and growth",
+              "Expanded to 20K+ merchants",
+              "Boosted GMV to $30M/month",
+              "Managed partnerships",
+            ],
           },
           {
             name: "Blokay",
@@ -80,7 +105,13 @@
             year: "2024 - Present",
             color: "#000",
             description:
-              "Blokay is a leading pro website builder loved by designers.",
+              "Dev platform to build apps from data, no backend needed",
+            items: [
+              "Founder and product lead",
+              "Designed IaaS architecture",
+              "Closed first B2B clients",
+              "Grew initial MRR",
+            ],
           },
         ];
 
@@ -122,79 +153,75 @@
             <div class="flex mt-10 mb-10 md:px-10 md:gap-3 gap-2 w-full ">
               {companies.map((company, index) => (
                 <div
-                  class={`min-w-6 md:min-w-28 h-[30rem] bg-neutral-900 overflow-hidden rounded-2xl relative transition-[flex] duration-500 ease-in-out group  ${
+                  class={`min-w-6 md:min-w-28 h-[30rem] bg-neutral-900 overflow-hidden rounded-2xl relative transition-[flex] duration-500 ease-in-out group px-5 py-10 ${
                     current == index ? "flex-1" : "flex-2"
                   }`}
                   key={index}
                   onMouseEnter={() => setCurrent(index)}
                 >
-                  <div
-                    class={`absolute top-0 left-0 w-full h-full  py-10 px-5 z-20 flex items-center justify-center`}
-                  >
-                    {current == index && (
-                      <motion.div
-                        class="h-full flex justify-between flex-col gap-1 "
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{
-                          duration: 0.5,
-                          delay: 0.5, // 500 ms
-                        }}
-                      >
-                        <div class="flex justify-between items-start gap-5">
-                          <div class="flex gap-3 items-start">
-                            <img
-                              src={company.logo}
-                              class="max-h-14 max-w-20 mb-3 bg-white rounded-lg"
-                            />
-                            <div>
-                              <div class="text-lg">{company.name}</div>
-                              <div class="text-neutral-400 text-sm">
-                                {company.year}
-                              </div>
+                  {current == index && (
+                    <motion.div
+                      class="h-full flex justify-between flex-col gap-1 "
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{
+                        duration: 0.5,
+                        delay: 0.5, // 500 ms
+                      }}
+                    >
+                      <div class="flex justify-between items-start gap-5">
+                        <div class="flex gap-3 items-start">
+                          <img
+                            src={company.logo}
+                            class="max-h-14 max-w-20 mb-3 bg-white rounded-lg"
+                          />
+                          <div>
+                            <div class="text-lg">{company.name}</div>
+                            <div class="text-neutral-400 text-sm">
+                              {company.year}
                             </div>
                           </div>
-                          {company.url && (
-                            <a href={company.url} target="_blank">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"
-                              >
-                                <path d="M15 3h6v6" />
-                                <path d="M10 14 21 3" />
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                              </svg>
-                            </a>
-                          )}
                         </div>
+                        {company.url && (
+                          <a href={company.url} target="_blank">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"
+                            >
+                              <path d="M15 3h6v6" />
+                              <path d="M10 14 21 3" />
+                              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            </svg>
+                          </a>
+                        )}
+                      </div>
 
-                        <div>
-                          <p class="text-2xl md:text-4xl text-pretty pb-5">
-                            {company.description}
-                          </p>
-                          <ul class="text-neutral-400 pl-6 flex flex-col gap-3 md:text-base text-sm list-disc">
-                            <li>as CTO , I built the platform</li>
-                            <li>
-                              I was Chief Growth Officer, and led the company
-                              from $10M to $35 in GMV
-                            </li>
-                            <li>
-                              Based in Amsterdam with my family. Into
-                              photography, espresso, and jujitsu.
-                            </li>
-                          </ul>
-                        </div>
-                      </motion.div>
-                    )}
-                  </div>
+                      <div>
+                        <p class="text-2xl md:text-4xl text-pretty pb-5">
+                          {company.description}
+                        </p>
+                        <ul class="text-neutral-400 pl-6 flex flex-col gap-3 md:text-base text-sm list-disc">
+                          <li>as CTO , I built the platform</li>
+                          <li>
+                            I was Chief Growth Officer, and led the company from
+                            $10M to $35 in GMV
+                          </li>
+                          <li>
+                            Based in Amsterdam with my family. Into photography,
+                            espresso, and jujitsu.
+                          </li>
+                        </ul>
+                      </div>
+                    </motion.div>
+                  )}
                 </div>
               ))}
             </div>
