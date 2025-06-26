@@ -33,6 +33,7 @@
             name: "Parexton",
             logo: "./logos/parexton.png",
             url: "https://parexton.com",
+            year: "2017 - 2018",
             color: "#000",
             description:
               "Blokay is a leading pro website builder loved by designers.",
@@ -42,6 +43,7 @@
             name: "BlackBozz",
             logo: "./logos/bozz.png",
             color: "#000",
+            year: "2018 - 2019",
             description:
               "Blokay is a leading pro website builder loved by designers.",
           },
@@ -51,12 +53,14 @@
             logo: "./logos/refacil.webp",
             url: "https://refacil.co",
             color: "#000",
+            year: "2019 - 2022",
             description:
               "Blokay is a leading pro website builder loved by designers.",
           },
           {
             name: "Pronty",
             color: "#000",
+            year: "2023 - 2024",
             description:
               "Blokay is a leading pro website builder loved by designers.",
           },
@@ -65,6 +69,7 @@
             logo: "./logos/bemovil.webp",
             url: "https://bemovil.net",
             color: "#000",
+            year: "2024 - Present",
             description:
               "Blokay is a leading pro website builder loved by designers.",
           },
@@ -72,6 +77,7 @@
             name: "Blokay",
             logo: "./logos/blokay.jpeg",
             url: "https://blokay.com",
+            year: "2024 - Present",
             color: "#000",
             description:
               "Blokay is a leading pro website builder loved by designers.",
@@ -90,7 +96,7 @@
 
               <div class="mt-5">
                 <h2 class="uppercase text-sm">Currently</h2>
-                <ul class="text-neutral-400 pl-6 flex flex-col gap-3">
+                <ul class="text-neutral-400 pl-6 flex flex-col gap-3 list-disc">
                   <li>
                     Founder at Blokay, a platform that lets developers build web
                     components directly from SQL—no backend needed.
@@ -136,13 +142,16 @@
                         }}
                       >
                         <div class="flex justify-between items-start gap-5">
-                          <div>
+                          <div class="flex gap-3 items-start">
                             <img
                               src={company.logo}
                               class="max-h-14 max-w-20 mb-3 bg-white rounded-lg"
                             />
-                            <div class="text-neutral-400 text-sm">
-                              2010 - 2014
+                            <div>
+                              <div class="text-lg">{company.name}</div>
+                              <div class="text-neutral-400 text-sm">
+                                {company.year}
+                              </div>
                             </div>
                           </div>
                           {company.url && (
@@ -171,7 +180,7 @@
                           <p class="text-2xl md:text-4xl text-pretty pb-5">
                             {company.description}
                           </p>
-                          <ul class="text-neutral-400 pl-6 flex flex-col gap-3 md:text-base text-sm">
+                          <ul class="text-neutral-400 pl-6 flex flex-col gap-3 md:text-base text-sm list-disc">
                             <li>as CTO , I built the platform</li>
                             <li>
                               I was Chief Growth Officer, and led the company
@@ -193,7 +202,7 @@
             <div class="mx-auto w-[30rem] pt-5 border-r border-l border-white/10 px-10">
               <div class="mt-5">
                 <h2 class="uppercase text-sm">BACKGROUND</h2>
-                <ul class="text-neutral-400 pl-6 flex flex-col gap-3">
+                <ul class="text-neutral-400 pl-6 flex flex-col gap-3 list-disc">
                   <li>
                     Founder of Blokay, AI-powered IaaS to build web components
                     from SQL—no backend needed.
