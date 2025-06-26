@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juan David Restrepo</title>
+    <script src="./tailwind.js"></script>
+    <script crossorigin src="./react.development.js"></script>
+    <script crossorigin src="./react-dom.production.min.js"></script>
+    <script type="text/javascript" src="./babel.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="./motion.js"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/jpeg" href="./juan.jpeg" />
+  </head>
+  <body class="bg-black text-white">
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const { motion } = Motion;
+      const urlParams = new URLSearchParams(window.location.search);
+      const codeUrl = urlParams.get("code");
+      const pdv = urlParams.get("pdv");
+      function App() {
+        const [current, setCurrent] = React.useState(5);
+
+        const companies = [
+          {
+            name: "Parexton",
+            logo: "./logos/parexton.png",
+            url: "https://parexton.com",
+            color: "#000",
+            description:
+              "Blokay is a leading pro website builder loved by designers.",
+          },
+
+          {
+            name: "BlackBozz",
+            logo: "./logos/bozz.png",
+            color: "#000",
+            description:
+              "Blokay is a leading pro website builder loved by designers.",
+          },
+
+          {
+            name: "Refácil",
+            logo: "./logos/refacil.webp",
+            url: "https://refacil.co",
+            color: "#000",
+            description:
+              "Blokay is a leading pro website builder loved by designers.",
+          },
+          {
+            name: "Pronty",
+            color: "#000",
+            description:
+              "Blokay is a leading pro website builder loved by designers.",
+          },
+          {
+            name: "Bemovil",
+            logo: "./logos/bemovil.webp",
+            url: "https://bemovil.net",
+            color: "#000",
+            description:
+              "Blokay is a leading pro website builder loved by designers.",
+          },
+          {
+            name: "Blokay",
+            logo: "./logos/blokay.jpeg",
+            url: "https://blokay.com",
+            color: "#000",
+            description:
+              "Blokay is a leading pro website builder loved by designers.",
+          },
+        ];
+
+        return (
+          <div class="bg-black text-white">
+            <div class="mx-auto md:w-[30rem] pt-10 border-r border-l border-white/10 px-10">
+              <img src="./juan.jpeg" class="size-12 rounded-full mx-auto" />
+
+              <p class="text-neutral-400 mt-10">
+                <span class="text-white">Hi, I’m Juan David.</span> Founder of
+                Blokay. Strategist at heart.
+              </p>
+
+              <div class="mt-5">
+                <h2 class="uppercase text-sm">Currently</h2>
+                <ul class="text-neutral-400 pl-6 flex flex-col gap-3">
+                  <li>
+                    Founder at Blokay, a platform that lets developers build web
+                    components directly from SQL—no backend needed.
+                  </li>
+                  <li>Head of Strategy at a leading fintech in Colombia.</li>
+                  <li>
+                    Based in
+                    <svg
+                      viewBox="0 0 3 2"
+                      class="w-6 h-6 inline-block rounded-md mx-2 overflow-hidden"
+                    >
+                      <rect width="3" height="1" y="0" fill="#FFD700" />
+                      <rect width="3" height="0.5" y="1" fill="#0033A0" />
+                      <rect width="3" height="0.5" y="1.5" fill="#CE1126" />
+                    </svg>
+                    Colombia with my family. Into tech, startups, and traveling
+                    light.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="flex mt-10 mb-10 md:px-10 md:gap-3 gap-2 w-full ">
+              {companies.map((company, index) => (
+                <div
+                  class={`min-w-6 md:min-w-28 h-[30rem] bg-neutral-900 overflow-hidden rounded-2xl relative transition-[flex] duration-500 ease-in-out group  ${
+                    current == index ? "flex-1" : "flex-2"
+                  }`}
+                  key={index}
+                  onMouseEnter={() => setCurrent(index)}
+                >
+                  <div
+                    class={`absolute top-0 left-0 w-full h-full  py-10 px-5 z-20 flex items-center justify-center`}
+                  >
+                    {current == index && (
+                      <motion.div
+                        class="h-full flex justify-between flex-col gap-1 "
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{
+                          duration: 0.5,
+                          delay: 0.5, // 500 ms
+                        }}
+                      >
+                        <div class="flex justify-between items-start gap-5">
+                          <div>
+                            <img
+                              src={company.logo}
+                              class="max-h-14 max-w-20 mb-3 bg-white rounded-lg"
+                            />
+                            <div class="text-neutral-400 text-sm">
+                              2010 - 2014
+                            </div>
+                          </div>
+                          {company.url && (
+                            <a href={company.url} target="_blank">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"
+                              >
+                                <path d="M15 3h6v6" />
+                                <path d="M10 14 21 3" />
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                              </svg>
+                            </a>
+                          )}
+                        </div>
+
+                        <div>
+                          <p class="text-2xl md:text-4xl text-pretty pb-5">
+                            {company.description}
+                          </p>
+                          <ul class="text-neutral-400 pl-6 flex flex-col gap-3 md:text-base text-sm">
+                            <li>as CTO , I built the platform</li>
+                            <li>
+                              I was Chief Growth Officer, and led the company
+                              from $10M to $35 in GMV
+                            </li>
+                            <li>
+                              Based in Amsterdam with my family. Into
+                              photography, espresso, and jujitsu.
+                            </li>
+                          </ul>
+                        </div>
+                      </motion.div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div class="mx-auto w-[30rem] pt-5 border-r border-l border-white/10 px-10">
+              <div class="mt-5">
+                <h2 class="uppercase text-sm">BACKGROUND</h2>
+                <ul class="text-neutral-400 pl-6 flex flex-col gap-3">
+                  <li>
+                    Founder of Blokay, AI-powered IaaS to build web components
+                    from SQL—no backend needed.
+                  </li>
+                  <li>
+                    Head of Strategy at Bemovil, fintech with 20K+ active
+                    retailers and $30M monthly GMV.
+                  </li>
+                  <li>
+                    Former CTO with 2 startup exits and $200M+ in annual GMV
+                    managed.
+                  </li>
+                  <li>
+                    Systems Engineering background with focus on distributed
+                    systems.
+                  </li>
+
+                  <li>
+                    Built and led high-performance tech teams with clear career
+                    paths.
+                  </li>
+
+                  <li>
+                    Strong operator in B2B/B2C, growth, and product velocity
+                    across LATAM.
+                  </li>
+                </ul>
+              </div>
+
+              <img src="./signature.png" class="h-26 mt-5 " />
+
+              <div class="bg-neutral-900 p-3 rounded-lg mt-5 mb-10 flex justify-between gap-5 items-center ">
+                <span class="text-sm"> Do you want to work with me?</span>
+                <a
+                  href="mailto:juandavid@gmail.com"
+                  class="bg-white inline-block py-1.5 px-3 rounded-lg text-black uppercase text-sm"
+                >
+                  Email me
+                </a>
+              </div>
+            </div>
+          </div>
+        );
+      }
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
